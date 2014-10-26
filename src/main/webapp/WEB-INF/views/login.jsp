@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <t:LoginTag>
     <jsp:attribute name="titlePage">        
-        Pruebas de Ensamble De Plantas
+        Kits de Pruebas de Plantas  de Emergencia
     </jsp:attribute> 
     <jsp:attribute name="app">
         <style>

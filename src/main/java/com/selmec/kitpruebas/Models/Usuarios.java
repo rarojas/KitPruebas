@@ -1,5 +1,5 @@
 package com.selmec.kitpruebas.Models;
-// Generated Oct 26, 2014 4:12:39 PM by Hibernate Tools 4.3.1
+// Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

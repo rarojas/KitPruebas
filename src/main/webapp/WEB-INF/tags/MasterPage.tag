@@ -100,6 +100,9 @@
                         <li>
                             <a href="#/KitsPruebas" class="dropdown-toggle">KitsPruebas</a>                                        
                         </li>
+                        <li>
+                            <a href="#/Ubicaciones" class="dropdown-toggle">Ubicaciones</a>                                        
+                        </li>
                     </ul>                                
                     <ul class="nav navbar-nav navbar-right">
                         <li>

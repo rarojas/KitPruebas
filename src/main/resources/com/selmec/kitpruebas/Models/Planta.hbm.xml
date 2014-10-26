@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Oct 26, 2014 4:12:40 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.selmec.kitpruebas.Models.Planta" table="planta" catalog="kitpruebas" optimistic-lock="version">
         <id name="noSerie" type="string">

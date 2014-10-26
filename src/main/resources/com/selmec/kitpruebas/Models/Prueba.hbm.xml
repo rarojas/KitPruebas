@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Oct 26, 2014 4:12:40 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.selmec.kitpruebas.Models.Prueba" table="prueba" catalog="kitpruebas" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -41,6 +41,9 @@
         <property name="dtApruebaSupervisor" type="timestamp">
             <column name="dtApruebaSupervisor" length="19" />
         </property>
+        <one-to-one name="vacio" class="com.selmec.kitpruebas.Models.Vacio"></one-to-one>
+        <one-to-one name="instalacion" class="com.selmec.kitpruebas.Models.Instalacion"></one-to-one>
+        <one-to-one name="arranque" class="com.selmec.kitpruebas.Models.Arranque"></one-to-one>
         <set name="lecturases" table="lecturas" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="PruebaID" />

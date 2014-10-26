@@ -1,5 +1,5 @@
 package com.selmec.kitpruebas.Models;
-// Generated Oct 26, 2014 4:12:39 PM by Hibernate Tools 4.3.1
+// Generated Oct 26, 2014 8:36:36 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,6 +41,9 @@ public class Prueba  implements java.io.Serializable {
      private Date dtAprueba;
      private Integer apruebaSupervisor;
      private Date dtApruebaSupervisor;
+     private Vacio vacio;
+     private Instalacion instalacion;
+     private Arranque arranque;
      private Set lecturases = new HashSet(0);
 
     public Prueba() {
@@ -53,7 +57,7 @@ public class Prueba  implements java.io.Serializable {
         this.dtInicio = dtInicio;
         this.dtFin = dtFin;
     }
-    public Prueba(Ensamble ensamble, Incidencias incidencias, int tipo, int estatus, Date dtInicio, Date dtFin, String comentario, Integer aprueba, Date dtAprueba, Integer apruebaSupervisor, Date dtApruebaSupervisor, Set lecturases) {
+    public Prueba(Ensamble ensamble, Incidencias incidencias, int tipo, int estatus, Date dtInicio, Date dtFin, String comentario, Integer aprueba, Date dtAprueba, Integer apruebaSupervisor, Date dtApruebaSupervisor, Vacio vacio, Instalacion instalacion, Arranque arranque, Set lecturases) {
        this.ensamble = ensamble;
        this.incidencias = incidencias;
        this.tipo = tipo;
@@ -65,6 +69,9 @@ public class Prueba  implements java.io.Serializable {
        this.dtAprueba = dtAprueba;
        this.apruebaSupervisor = apruebaSupervisor;
        this.dtApruebaSupervisor = dtApruebaSupervisor;
+       this.vacio = vacio;
+       this.instalacion = instalacion;
+       this.arranque = arranque;
        this.lecturases = lecturases;
     }
    
@@ -188,6 +195,33 @@ public class Prueba  implements java.io.Serializable {
     
     public void setDtApruebaSupervisor(Date dtApruebaSupervisor) {
         this.dtApruebaSupervisor = dtApruebaSupervisor;
+    }
+
+@OneToOne(fetch=FetchType.LAZY, mappedBy="prueba")
+    public Vacio getVacio() {
+        return this.vacio;
+    }
+    
+    public void setVacio(Vacio vacio) {
+        this.vacio = vacio;
+    }
+
+@OneToOne(fetch=FetchType.LAZY, mappedBy="prueba")
+    public Instalacion getInstalacion() {
+        return this.instalacion;
+    }
+    
+    public void setInstalacion(Instalacion instalacion) {
+        this.instalacion = instalacion;
+    }
+
+@OneToOne(fetch=FetchType.LAZY, mappedBy="prueba")
+    public Arranque getArranque() {
+        return this.arranque;
+    }
+    
+    public void setArranque(Arranque arranque) {
+        this.arranque = arranque;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="prueba")

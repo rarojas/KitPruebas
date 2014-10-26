@@ -13,4 +13,7 @@
   <table-filter match-name="ensamble"/>
   <table-filter match-name="prueba"/>
   <table-filter match-name="usuarios"/>
+  <table-filter match-name="vacio"/>
+  <table-filter match-name="arranque"/>
+  <table-filter match-name="instalacion"/>
 </hibernate-reverse-engineering>
