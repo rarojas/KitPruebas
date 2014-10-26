@@ -20,11 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Ensamble")
 public class EnsambleController extends BaseController<Ensamble, Integer, EnsambleDTO> {
 
-    @Autowired
     IEnsambleService ensambleService;
 
     public EnsambleController() {
         this.setDTO(EnsambleDTO.class);
+
+    }
+
+    /**
+     * @param ensambleService the ensambleService to set
+     */
+    @Autowired
+    public void setEnsambleService(IEnsambleService ensambleService) {
+        this.ensambleService = ensambleService;
         this.baseService = ensambleService;
     }
 }

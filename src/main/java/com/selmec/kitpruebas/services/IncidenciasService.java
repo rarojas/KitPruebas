@@ -9,11 +9,13 @@ import com.selmec.kitpruebas.Models.Incidencias;
 import com.selmec.utils.dao.IGenericDao;
 import com.selmec.utils.services.BaseServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author GEIDAR
  */
+@Service
 public class IncidenciasService extends BaseServices<Incidencias, String> implements IIncidenciasService {
 
     @Autowired

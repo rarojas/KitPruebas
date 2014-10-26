@@ -20,11 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Planta")
 public class PlantaController extends BaseController<Planta, String, PlantaDTO> {
 
-    @Autowired
     IPlantaService plantaService;
 
     public PlantaController() {
         this.setDTO(PlantaDTO.class);
+
+    }
+
+    /**
+     * @param plantaService the plantaService to set
+     */
+    @Autowired
+    public void setPlantaService(IPlantaService plantaService) {
+        this.plantaService = plantaService;
         this.baseService = plantaService;
     }
 }

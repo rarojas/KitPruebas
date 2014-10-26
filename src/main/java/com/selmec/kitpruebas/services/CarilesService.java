@@ -14,7 +14,10 @@ import com.selmec.kitpruebas.Models.Cariles;
 import com.selmec.utils.dao.IGenericDao;
 import com.selmec.utils.services.BaseServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class CarilesService extends BaseServices<Cariles, Integer> implements ICarilesService {
 
     @Autowired

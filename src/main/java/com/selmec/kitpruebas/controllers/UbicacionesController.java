@@ -20,11 +20,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Ubicaciones")
 public class UbicacionesController extends BaseController<Ubicaciones, Integer, UbicacionDTO> {
 
-    @Autowired
     IUbicacionesService ubicacionesService;
 
     public UbicacionesController() {
         this.setDTO(UbicacionDTO.class);
         this.baseService = ubicacionesService;
+    }
+
+    /**
+     * @param ubicacionesService the ubicacionesService to set
+     */
+    @Autowired
+    public void setUbicacionesService(IUbicacionesService ubicacionesService) {
+        this.ubicacionesService = ubicacionesService;
     }
 }

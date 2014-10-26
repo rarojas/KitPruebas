@@ -6,11 +6,9 @@
 package com.selmec.kitpruebas.controllers;
 
 import com.selmec.utils.services.IBaseServices;
-import java.security.Principal;
 import java.util.List;
 import ma.glasnost.orika.MapperFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

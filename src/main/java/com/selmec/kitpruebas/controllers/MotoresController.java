@@ -20,11 +20,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Motores")
 public class MotoresController extends BaseController<Motores, String, MotorDTO> {
 
-    @Autowired
+  
     IMotoresService motoresService;
 
     public MotoresController() {
         this.setDTO(MotorDTO.class);
+        
+    }
+
+    /**
+     * @param motoresService the motoresService to set
+     */
+      @Autowired
+    public void setMotoresService(IMotoresService motoresService) {
+        this.motoresService = motoresService;
         this.baseService = motoresService;
     }
 }

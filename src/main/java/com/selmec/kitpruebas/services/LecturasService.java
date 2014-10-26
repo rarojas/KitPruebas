@@ -9,11 +9,13 @@ import com.selmec.kitpruebas.Models.Lecturas;
 import com.selmec.utils.dao.IGenericDao;
 import com.selmec.utils.services.BaseServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author GEIDAR
  */
+@Service
 public class LecturasService extends BaseServices<Lecturas, Integer> implements ILecturasService {
 
     @Autowired

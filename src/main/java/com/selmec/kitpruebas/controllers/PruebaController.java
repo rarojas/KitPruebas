@@ -20,11 +20,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Prueba")
 public class PruebaController extends BaseController<Prueba, Integer, PruebaDTO> {
 
-    @Autowired
+   
     IPruebaService pruebaService;
 
     public PruebaController() {
         this.setDTO(PruebaDTO.class);
-        this.baseService = pruebaService;
+       
+    }
+
+    /**
+     * @param pruebaService the pruebaService to set
+     */
+     @Autowired
+    public void setPruebaService(IPruebaService pruebaService) {
+        this.pruebaService = pruebaService;
+         this.baseService = pruebaService;
     }
 }

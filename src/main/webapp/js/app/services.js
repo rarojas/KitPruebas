@@ -6,10 +6,10 @@ var services = ["PlantaServices",
                 On: {method: 'get', url: urlApiBase + "Planta/On/:id"},
                 Off: {method: 'get', url: urlApiBase + "Planta/Off/:id"}
             });
-            api.Carriles = $resource(urlApiBase + "Carriles/:id", {}, {
+            api.Carriles = $resource(urlApiBase + "Cariles/:id", {}, {
                 update: {method: 'PUT'}
             });
-             api.KitsPruebas = $resource(urlApiBase + "Carriles/:id", {}, {
+             api.KitsPruebas = $resource(urlApiBase + "Cariles/:id", {}, {
                 update: {method: 'PUT'}
             });
             api.Motores = $resource(urlApiBase + "Motores/:modelo", {}, {

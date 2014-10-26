@@ -19,8 +19,7 @@ import java.util.Set;
 public class ClienteDTO implements java.io.Serializable {
 
     public int id;
-    public String razonSocial;
-    public Set ubicacioneses = new HashSet(0);
+    public String razonSocial;    
 
     public ClienteDTO() {
     }

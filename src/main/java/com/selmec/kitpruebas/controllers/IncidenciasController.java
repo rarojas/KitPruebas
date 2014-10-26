@@ -20,11 +20,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Incidencias")
 public class IncidenciasController extends BaseController<Incidencias, String, IncidenciaDTO> {
 
-    @Autowired
+   
     IIncidenciasService incidenciasService;
 
     public IncidenciasController() {
         this.setDTO(IncidenciaDTO.class);
-        this.baseService = incidenciasService;
+      
+    }
+
+    /**
+     * @param incidenciasService the incidenciasService to set
+     */
+     @Autowired
+    public void setIncidenciasService(IIncidenciasService incidenciasService) {
+        this.incidenciasService = incidenciasService;
+          this.baseService = incidenciasService;
     }
 }
