@@ -1,12 +1,17 @@
 var services = ["PlantaServices",
     ["$resource", function ($resource) {
-            var urlApiBase = "/api/";
+            var urlApiBase = "/KitPruebas/api/";
             var api = {};
             api.Plantas = $resource(urlApiBase + "Planta/:noSerie", {}, {
                 On: {method: 'get', url: urlApiBase + "Planta/On/:id"},
                 Off: {method: 'get', url: urlApiBase + "Planta/Off/:id"}
             });
-            api.Carriles = $resource(urlApiBase + "Carriles/:id", {}, {});
+            api.Carriles = $resource(urlApiBase + "Carriles/:id", {}, {
+                update: {method: 'PUT'}
+            });
+             api.KitsPruebas = $resource(urlApiBase + "Carriles/:id", {}, {
+                update: {method: 'PUT'}
+            });
             api.Motores = $resource(urlApiBase + "Motores/:modelo", {}, {
                 update: {method: 'PUT'},
                 get: {method: 'GET', url: urlApiBase + "Motores/Get"}
@@ -26,6 +31,9 @@ var services = ["PlantaServices",
                 update: {method: 'PUT'}
             });
             api.Usuarios = $resource(urlApiBase + "Usuarios/:id", {}, {
+                update: {method: 'PUT'}
+            });
+            api.Clientes = $resource(urlApiBase + "Clientes/:id", {}, {
                 update: {method: 'PUT'}
             });
             return api;

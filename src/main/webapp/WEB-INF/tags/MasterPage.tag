@@ -18,7 +18,7 @@
     <script src="<c:url value="/js/libs/angular-directives-d3/angularjs-nvd3-directives.min.js"/>"></script>    
     <script src="<c:url value="/js/libs/n3-linecharts/line-chart.min.js"/>"></script>    
     <script src="<c:url value="/js/libs/angular.js/angular-resource.js"/>"></script>    
-    <script src="<c:url value="/js/libs/angular.js/angular-route.min.js"/>"></script>    
+    <script src="<c:url value="/js/libs/angular.js/angular-route.js"/>"></script>    
     <script src="<c:url value="/js/app/app.js"/>"></script>            
     <script src="<c:url value="/js/app/services.js"/>"></script>  
     <script src="<c:url value="/js/app/routes.js"/>"></script>  
@@ -94,6 +94,12 @@
                         <li>
                             <a href="#/Usuarios" class="dropdown-toggle">Usuarios</a>                                        
                         </li>                                    
+                        <li>
+                            <a href="#/Clientes" class="dropdown-toggle">Clientes</a>                                        
+                        </li>
+                        <li>
+                            <a href="#/KitsPruebas" class="dropdown-toggle">KitsPruebas</a>                                        
+                        </li>
                     </ul>                                
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -104,7 +110,7 @@
                             </a>
                         </li>                        <li>
                             <a href="#" style="padding:0px">
-                                <img src="<c:url value="/img/Logo Selmec.png"/>" class="img-responsive" width="150" alt=""/>
+                                <img src="<c:url value="/img/Selmec.png"/>" class="img-responsive" width="150" alt=""/>
                             </a>
                         </li>                        
                         <li>

@@ -2,70 +2,94 @@ var Routes = ['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
                 when('/NuevaPrueba', {
-                    templateUrl: '/templates/Ensamble/Nueva.html',
+                    templateUrl: '/KitPruebas/templates/Ensamble/Nueva.html',
                     controller: 'EnsambleController'
                 }).
                 when('/Pruebas', {
-                    templateUrl: '/templates/Ensamble/Pruebas.html',
+                    templateUrl: '/KitPruebas/templates/Ensamble/Pruebas.html',
                     controller: 'PruebasCtrl'
                 }).
                 when('/Pruebas/:PruebaID', {
-                    templateUrl: '/templates/Ensamble/Prueba.html',
+                    templateUrl: '/KitPruebas/templates/Ensamble/Prueba.html',
                     controller: 'PruebaCtrl'
                 }).
                 when('/PruebaSinCarga/:EnsambleID', {
-                    templateUrl: '/templates/PruebaSinCarga.html',
+                    templateUrl: '/KitPruebas/templates/PruebaSinCarga.html',
                     controller: 'PruebaSinCargaController'
                 }).
                 when('/PruebaSinCargaView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/templates/PruebaSinCargaView.html',
+                    templateUrl: '/KitPruebas/templates/PruebaSinCargaView.html',
                     controller: 'PruebaSinCargaCtrl'
                 }).
                 when('/PruebaConCargaView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/templates/PruebaConCargaView.html',
+                    templateUrl: '/KitPruebas/templates/PruebaConCargaView.html',
                     controller: 'PruebaSinCargaCtrl'
                 }).
                 when('/PruebaConCarga/:EnsambleID', {
-                    templateUrl: '/templates/PruebaConCarga.html',
+                    templateUrl: '/KitPruebas/templates/PruebaConCarga.html',
                     controller: 'PruebaConCargaController'
                 }).
                 when('/PruebaConCargaSubita/:EnsambleID', {
-                    templateUrl: '/templates/PruebaConCargaSubita.html',
+                    templateUrl: '/KitPruebas/templates/PruebaConCargaSubita.html',
                     controller: 'PruebaConCargaSubitaCtrl'
                 }).
                 when('/Motores', {
-                    templateUrl: '/templates/Motores/Index.html',
+                    templateUrl: '/KitPruebas/templates/Motores/Index.html',
                     controller: 'MotoresCtrl'
                 }).
                 when('/Motores/Edit', {
-                    templateUrl: '/templates/Motores/Edit.html',
+                    templateUrl: '/KitPruebas/templates/Motores/Edit.html',
                     controller: 'MotoresSaveCtrl'
                 }).
                 when('/Motores/Create', {
-                    templateUrl: '/templates/Motores/Create.html',
+                    templateUrl: '/KitPruebas/templates/Motores/Create.html',
                     controller: 'MotoresSaveCtrl'
                 }).
                 when('/PruebaControl/:EnsambleID', {
-                    templateUrl: '/templates/PruebaControl.html',
+                    templateUrl: '/KitPruebas/templates/PruebaControl.html',
                     controller: 'PruebaControlCtrl'
                 }).
                 when('/PruebaControlView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/templates/PruebaControlView.html',
+                    templateUrl: '/KitPruebas/templates/PruebaControlView.html',
                     controller: 'PruebaControlViewCtrl'
                 }).
                 when('/Usuarios', {
-                    templateUrl: '/templates/Usuarios/Index.html',
+                    templateUrl: '/KitPruebas/templates/Usuarios/Index.html',
                     controller: 'UsuariosCtrl'
                 }).
                 when('/Usuarios/Edit/:id', {
-                    templateUrl: '/templates/Usuarios/Edit.html',
+                    templateUrl: '/KitPruebas/templates/Usuarios/Edit.html',
                     controller: 'UsuariosSaveCtrl'
                 }).
                 when('/Usuarios/Create', {
-                    templateUrl: '/templates/Usuarios/Create.html',
+                    templateUrl: '/KitPruebas/templates/Usuarios/Create.html',
                     controller: 'UsuariosSaveCtrl'
+                })
+                .when('/Clientes', {
+                    templateUrl: '/KitPruebas/templates/Clientes/Index.html',
+                    controller: 'ClientesCtrl'
                 }).
-                otherwise({
+                when('/Clientes/Edit/:id', {
+                    templateUrl: '/KitPruebas/templates/Clientes/Edit.html',
+                    controller: 'ClientesSaveCtrl'
+                }).
+                when('/Clientes/Create', {
+                    templateUrl: '/KitPruebas/templates/Clientes/Create.html',
+                    controller: 'ClientesSaveCtrl'
+                })
+                .when('/KitsPruebas', {
+                    templateUrl: '/KitPruebas/templates/Kits/Index.html',
+                    controller: 'KitsPruebasCtrl'
+                }).
+                when('/KitsPruebas/Edit/:id', {
+                    templateUrl: '/KitPruebas/templates/Kits/Edit.html',
+                    controller: 'KitsPruebasSaveCtrl'
+                }).
+                when('/KitsPruebas/Create', {
+                    templateUrl: '/KitPruebas/templates/Kits/Create.html',
+                    controller: 'KitsPruebasSaveCtrl'
+                })
+                .otherwise({
                     redirectTo: '/'
                 });
     }];

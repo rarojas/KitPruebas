@@ -60,7 +60,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#" style="padding:0px">
-                                <img src="<c:url value="/img/Logo Selmec.png"/>" class="img-responsive" width="150" alt=""/>
+                                <img src="<c:url value="/img/Selmec.png"/>" class="img-responsive" width="150" alt=""/>
                             </a>
                         </li>                        
 

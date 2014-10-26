@@ -1,0 +1,19 @@
+<div class="col-md-12">
+    <a href="#/Clientes/Create" class="btn btn-primary">Agregar</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Razon Social</th>                
+                <th>Acciones</th>
+            </tr>                                
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in motores">
+                <td><a href="#/Clientes/Edit/{{row.id}}">{{row.razonSocial}}</a></td>                
+                <td>
+                    <button class="btn btn-danger">Borrar</button>
+                </td>                          
+            </tr>
+        </tbody>
+    </table>
+</div>

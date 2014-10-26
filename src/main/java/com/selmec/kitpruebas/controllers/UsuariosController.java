@@ -20,11 +20,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Usuarios")
 public class UsuariosController extends BaseController<Usuarios, Integer, UsuarioDTO> {
     
-    @Autowired
     IUsuariosServices usuariosServices;
-    
+
+    @Autowired
+    public void setUsuariosServices(IUsuariosServices usuariosServices) {
+        this.usuariosServices = usuariosServices;
+        this.baseService = usuariosServices;
+    }
+
     public UsuariosController() {
         this.setDTO(UsuarioDTO.class);
     }
-    
+
 }

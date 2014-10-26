@@ -121,3 +121,87 @@ app.controller("UsuariosSaveCtrl",
                         };
                     }
         ]);
+
+app.controller("ClientesCtrl",
+        ["$scope", "PlantaServices", "$routeParams"
+                    , function ($scope, PlantaServices) {
+                        $scope.clientes = PlantaServices.Clientes.query();
+                        $scope.Delete = function (cliente) {
+                            PlantaServices.Clientes.delete({id: cliente.id}, function () {
+                                $scope.cliente.pop(cliente);
+                            }, function () {
+                            });
+                        };
+                    }
+        ]);
+
+app.controller("ClientesSaveCtrl",
+        ["$scope", "PlantaServices", "$routeParams", "$location"
+                    , function ($scope, PlantaServices, $routeParams, $location) {
+                        $scope.cliente = new PlantaServices.Clientes();
+                        if ($routeParams.id !== undefined)
+                            $scope.cliente.$get({id: $routeParams.id});
+                        $scope.Save = function () {
+                            $scope.cliente.$save(function () {
+                                if (!$routeParams.id)
+                                    $location.path("/Clientes/Edit/" + $scope.cliente.id);
+                            }, function () {
+
+                            });
+                        };
+                        $scope.Update = function () {
+                            $scope.cliente.$update(function () {
+                            }, function () {
+                            });
+                        };
+                        $scope.Delete = function () {
+                            $scope.cliente.$delete(function () {
+                                $location.path("/Clientes");
+                            }, function () {
+
+                            });
+                        };
+                    }
+        ]);
+
+app.controller("KitsPruebasCtrl",
+        ["$scope", "PlantaServices", "$routeParams"
+                    , function ($scope, PlantaServices) {
+                        $scope.kits = PlantaServices.KitsPruebas.query();
+                        $scope.Delete = function (kit) {
+                            PlantaServices.KitsPruebas.delete({id: kit.id}, function () {
+                                $scope.kit.pop(kit);
+                            }, function () {
+                            });
+                        };
+                    }
+        ]);
+
+app.controller("KitsPruebasSaveCtrl",
+        ["$scope", "PlantaServices", "$routeParams", "$location"
+                    , function ($scope, PlantaServices, $routeParams, $location) {
+                        $scope.kit = new PlantaServices.KitsPruebas();
+                        if ($routeParams.id !== undefined)
+                            $scope.kit.$get({id: $routeParams.id});
+                        $scope.Save = function () {
+                            $scope.kit.$save(function () {
+                                if (!$routeParams.id)
+                                    $location.path("/KitsPruebas/Edit/" + $scope.kit.id);
+                            }, function () {
+
+                            });
+                        };
+                        $scope.Update = function () {
+                            $scope.kit.$update(function () {
+                            }, function () {
+                            });
+                        };
+                        $scope.Delete = function () {
+                            $scope.kit.$delete(function () {
+                                $location.path("/KitsPruebas");
+                            }, function () {
+
+                            });
+                        };
+                    }
+        ]);
