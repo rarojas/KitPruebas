@@ -29,7 +29,7 @@ public abstract class BaseController<E, K, DTO> {
     @Autowired
     MapperFacade mapper;
 
-    IBaseServices<E, K> baseService;
+    public IBaseServices<E, K> baseService;
 
     Class<DTO> DTO;
 

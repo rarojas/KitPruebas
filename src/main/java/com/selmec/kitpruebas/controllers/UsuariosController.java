@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("api/Usuarios")
 public class UsuariosController extends BaseController<Usuarios, Integer, UsuarioDTO> {
+
     
     IUsuariosServices usuariosServices;
 
@@ -30,6 +31,6 @@ public class UsuariosController extends BaseController<Usuarios, Integer, Usuari
 
     public UsuariosController() {
         this.setDTO(UsuarioDTO.class);
+        this.baseService = usuariosServices;
     }
-
 }
