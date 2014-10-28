@@ -86,8 +86,20 @@ var Routes = ['$routeProvider',
                     controller: 'KitsPruebasSaveCtrl'
                 }).
                 when('/KitsPruebas/Create', {
-                    templateUrl: '/KitPruebas/templates/Kits/Create.html',
+                    templateUrl: '/KitPruebas/templates/Ubicaciones/Create.html',
                     controller: 'KitsPruebasSaveCtrl'
+                })
+                .when('/Ubicaciones', {
+                    templateUrl: '/KitPruebas/templates/Ubicaciones/Index.html',
+                    controller: 'UbicacionesCtrl'
+                }).
+                when('/Ubicaciones/Edit/:id', {
+                    templateUrl: '/KitPruebas/templates/Ubicaciones/Edit.html',
+                    controller: 'UbicacionesSaveCtrl'
+                }).
+                when('/Ubicaciones/Create', {
+                    templateUrl: '/KitPruebas/templates/Ubicaciones/Create.html',
+                    controller: 'UbicacionesSaveCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'

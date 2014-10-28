@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api/Cariles")
 public class CarilesController extends BaseController<Cariles, Integer, CarilDTO> {
 
-   
     ICarilesService carilService;
 
     public CarilesController() {
@@ -32,9 +31,10 @@ public class CarilesController extends BaseController<Cariles, Integer, CarilDTO
     /**
      * @param carilService the carilService to set
      */
-     @Autowired
+    @Autowired
     public void setCarilService(ICarilesService carilService) {
         this.carilService = carilService;
+        this.baseService = carilService;
     }
-    
+
 }

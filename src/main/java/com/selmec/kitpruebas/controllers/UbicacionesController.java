@@ -24,7 +24,7 @@ public class UbicacionesController extends BaseController<Ubicaciones, Integer, 
 
     public UbicacionesController() {
         this.setDTO(UbicacionDTO.class);
-        this.baseService = ubicacionesService;
+
     }
 
     /**
@@ -33,5 +33,6 @@ public class UbicacionesController extends BaseController<Ubicaciones, Integer, 
     @Autowired
     public void setUbicacionesService(IUbicacionesService ubicacionesService) {
         this.ubicacionesService = ubicacionesService;
+        this.baseService = ubicacionesService;
     }
 }

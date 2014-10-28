@@ -9,14 +9,17 @@ var services = ["PlantaServices",
             api.Carriles = $resource(urlApiBase + "Cariles/:id", {}, {
                 update: {method: 'PUT'}
             });
-             api.KitsPruebas = $resource(urlApiBase + "Cariles/:id", {}, {
+            api.KitsPruebas = $resource(urlApiBase + "Cariles/:id", {}, {
+                update: {method: 'PUT'}
+            });
+            api.Ubicaciones = $resource(urlApiBase + "Ubicaciones/:id", {}, {
                 update: {method: 'PUT'}
             });
             api.Motores = $resource(urlApiBase + "Motores/:modelo", {}, {
                 update: {method: 'PUT'},
                 get: {method: 'GET', url: urlApiBase + "Motores/Get"}
             });
-            api.Ensambles = $resource(urlApiBase + "Ensambles/:id", {}, {});
+            api.Ensambles = $resource(urlApiBase + "Prueba/:id", {}, {});
             api.Pruebascontrol = $resource(urlApiBase + "Pruebacontrol/:id", {}, {});
             api.Pruebas = $resource(urlApiBase + "Pruebas/:id", {}, {
                 GetValues: {url: urlApiBase + 'Planta/GetValues/:id/:seg/:ite/:equipo'},

@@ -205,3 +205,45 @@ app.controller("KitsPruebasSaveCtrl",
                         };
                     }
         ]);
+        
+        app.controller("UbicacionesCtrl",
+        ["$scope", "PlantaServices", "$routeParams"
+                    , function ($scope, PlantaServices) {
+                        $scope.ubicaciones = PlantaServices.Ubicaciones.query();
+                        $scope.Delete = function (ubicacion) {
+                            PlantaServices.Ubicaciones.delete({id: ubicacion.id}, function () {
+                                $scope.ubicacion.pop(ubicacion);
+                            }, function () {
+                            });
+                        };
+                    }
+        ]);
+
+app.controller("UbicacionesSaveCtrl",
+        ["$scope", "PlantaServices", "$routeParams", "$location"
+                    , function ($scope, PlantaServices, $routeParams, $location) {
+                        $scope.ubicacion = new PlantaServices.Ubicaciones();
+                        if ($routeParams.id !== undefined)
+                            $scope.ubicacion.$get({id: $routeParams.id});
+                        $scope.Save = function () {
+                            $scope.ubicacion.$save(function () {
+                                if (!$routeParams.id)
+                                    $location.path("/Ubicaciones/Edit/" + $scope.ubicacion.id);
+                            }, function () {
+
+                            });
+                        };
+                        $scope.Update = function () {
+                            $scope.ubicacion.$update(function () {
+                            }, function () {
+                            });
+                        };
+                        $scope.Delete = function () {
+                            $scope.ubicacion.$delete(function () {
+                                $location.path("/Ubicaciones");
+                            }, function () {
+
+                            });
+                        };
+                    }
+        ]);
