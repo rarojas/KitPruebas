@@ -9,9 +9,6 @@
  */
 package com.selmec.kitpruebas.dto;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  *
  * @author GEIDAR
@@ -19,7 +16,8 @@ import java.util.Set;
 public class ClienteDTO implements java.io.Serializable {
 
     public int id;
-    public String razonSocial;    
+
+    public String razonSocial;
 
     public ClienteDTO() {
     }

@@ -6,7 +6,7 @@
     <class name="com.selmec.kitpruebas.Models.Clientes" table="clientes" catalog="kitpruebas" optimistic-lock="version">
         <id name="id" type="int">
             <column name="ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="razonSocial" type="string">
             <column name="razonSocial" length="200" not-null="true" />

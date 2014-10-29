@@ -13,26 +13,6 @@ var Routes = ['$routeProvider',
                     templateUrl: '/KitPruebas/templates/Ensamble/Prueba.html',
                     controller: 'PruebaCtrl'
                 }).
-                when('/PruebaSinCarga/:EnsambleID', {
-                    templateUrl: '/KitPruebas/templates/PruebaSinCarga.html',
-                    controller: 'PruebaSinCargaController'
-                }).
-                when('/PruebaSinCargaView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/KitPruebas/templates/PruebaSinCargaView.html',
-                    controller: 'PruebaSinCargaCtrl'
-                }).
-                when('/PruebaConCargaView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/KitPruebas/templates/PruebaConCargaView.html',
-                    controller: 'PruebaSinCargaCtrl'
-                }).
-                when('/PruebaConCarga/:EnsambleID', {
-                    templateUrl: '/KitPruebas/templates/PruebaConCarga.html',
-                    controller: 'PruebaConCargaController'
-                }).
-                when('/PruebaConCargaSubita/:EnsambleID', {
-                    templateUrl: '/KitPruebas/templates/PruebaConCargaSubita.html',
-                    controller: 'PruebaConCargaSubitaCtrl'
-                }).
                 when('/Motores', {
                     templateUrl: '/KitPruebas/templates/Motores/Index.html',
                     controller: 'MotoresCtrl'
@@ -45,12 +25,12 @@ var Routes = ['$routeProvider',
                     templateUrl: '/KitPruebas/templates/Motores/Create.html',
                     controller: 'MotoresSaveCtrl'
                 }).
-                when('/PruebaControl/:EnsambleID', {
-                    templateUrl: '/KitPruebas/templates/PruebaControl.html',
+                when('/Instalacion/:EnsambleID', {
+                    templateUrl: '/KitPruebas/templates/Pruebas/Instalacion.html',
                     controller: 'PruebaControlCtrl'
                 }).
-                when('/PruebaControlView/:EnsambleID/:PruebaID', {
-                    templateUrl: '/KitPruebas/templates/PruebaControlView.html',
+                when('/InstalacionView/:EnsambleID/:PruebaID', {
+                    templateUrl: '/KitPruebas/templates/Instalacion.html',
                     controller: 'PruebaControlViewCtrl'
                 }).
                 when('/Usuarios', {

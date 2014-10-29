@@ -21,6 +21,9 @@ var services = ["PlantaServices",
             });
             api.Ensambles = $resource(urlApiBase + "Prueba/:id", {}, {});
             api.Pruebascontrol = $resource(urlApiBase + "Pruebacontrol/:id", {}, {});
+            api.Instalacion = $resource(urlApiBase + "Instalacion/:id", {}, {
+                update: {method: 'PUT'}
+            });
             api.Pruebas = $resource(urlApiBase + "Pruebas/:id", {}, {
                 GetValues: {url: urlApiBase + 'Planta/GetValues/:id/:seg/:ite/:equipo'},
                 Valores: {url: urlApiBase + "Planta/Valores/:id"},
