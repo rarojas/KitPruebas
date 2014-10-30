@@ -30,7 +30,7 @@ public class ClientesController extends BaseController<Clientes, Integer, Client
      * @param clienteService the clienteService to set
      */
     @Autowired
-    public void setClienteService(IClientesService clienteService) {        
+    public void setClienteService(IClientesService clienteService) {
         this.clienteService = clienteService;
         this.baseService = clienteService;
     }

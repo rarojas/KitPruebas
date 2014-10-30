@@ -11,6 +11,12 @@
         <property name="razonSocial" type="string">
             <column name="razonSocial" length="200" not-null="true" />
         </property>
+        <property name="noCliente" type="string">
+            <column name="noCliente" length="20" />
+        </property>
+        <property name="RFC" type="string">
+            <column name="RFC" length="200"/>
+        </property>
         <set name="ubicacioneses" table="ubicaciones" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ClienteId" />

@@ -1,7 +1,27 @@
 var app = angular.module("PlantaAPP", ['nvd3ChartDirectives', 'n3-line-chart', "ngResource", "ngRoute", 'angular-loading-bar']);
-app.controller("PruebasCtrl", ["$scope", "PlantaServices",
-    function ($scope, PlantaServices) {
-        $scope.pruebas = PlantaServices.Ensambles.query();
+app.controller("PruebasCtrl", ["$scope", "PlantaServices","$filter",
+    function ($scope, PlantaServices,$filter) {
+        $scope.current = 0;
+        $scope.total = 0;
+        $scope.rowsPage = 10;
+        $scope.totalRows = 0;
+        $scope.pruebas = PlantaServices.Ensambles.query(function () {
+            $scope.total = Math.ceil($scope.pruebas.length / $scope.rowsPage);
+            $scope.totalRows = $scope.pruebas.length;
+            $scope.filtered = $scope.pruebas;
+        });
+        $scope.next = function () {
+
+        };
+        $scope.previous = function () {
+
+        };
+        $scope.$watch("search", function () {
+            $scope.filtered = $filter("filter")($scope.pruebas, $scope.search);
+        }, true);
+        $scope.result = function () {
+            return $scope.filtered.slice($scope.current * $scope.rowsPage, ($scope.current + 1) * $scope.rowsPage);
+        };
     }]);
 app.controller("PruebaCtrl", ["$scope", "PlantaServices", "$routeParams",
     function ($scope, PlantaServices, $routeParams) {
@@ -605,3 +625,40 @@ app.controller("EnsambleController", ["$scope", "PlantaServices", "$filter", "$l
     }]);
 
 
+app.config(['$locationProvider', '$httpProvider',
+    function ($locationProvider, $httpProvider) {
+        $httpProvider.interceptors.push(function ($q, $rootScope, $location) {
+            return {
+                'responseError': function (rejection) {
+                    var status = rejection.status;
+                    var config = rejection.config;
+                    var method = config.method;
+                    var url = config.url;
+
+                    if (status === 401) {
+                        $location.url("/");
+                    } else {
+                        $rootScope.error = method + " on " + url + " failed with status " + status;
+                    }
+
+                    return $q.reject(rejection);
+                }
+            };
+        }
+        );
+    }]);
+app.run(["$rootScope", "$location", "PlantaServices",
+    function ($rootScope, $location, PlantaServices) {
+        $rootScope.user = undefined;
+
+        $rootScope.hasRole = function (role) {
+            if ($rootScope.user === undefined) {
+                return false;
+            }
+            if ($rootScope.user.roles[role] === undefined) {
+                return false;
+            }
+            return $rootScope.user.roles[role];
+        };
+
+    }]);

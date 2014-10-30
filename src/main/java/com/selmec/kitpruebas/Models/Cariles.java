@@ -29,6 +29,7 @@ public class Cariles  implements java.io.Serializable {
      private int noCarril;
      private String equipo;
      private Set ensambles = new HashSet(0);
+     private String descripcion;
 
     public Cariles() {
     }
@@ -83,6 +84,21 @@ public class Cariles  implements java.io.Serializable {
     
     public void setEnsambles(Set ensambles) {
         this.ensambles = ensambles;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    @Column(name="descripcion",  length=100)
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
 

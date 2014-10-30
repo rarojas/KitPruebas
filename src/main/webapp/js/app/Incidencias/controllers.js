@@ -1,7 +1,8 @@
 app.controller("IncidenciasCtrl",
-        ["$scope", "PlantaServices", "$routeParams"
-                    , function ($scope, PlantaServices) {
-                        $scope.incidencias = PlantaServices.Incidencias.query();
+        ["$scope", "PlantaServices", "$routeParams","$filter"
+                    , function ($scope, PlantaServices,$filter) {
+                        BaseTableController.call(this, $scope, $filter);
+                        $scope.items = PlantaServices.Incidencias.query($scope.Init);
                         $scope.Delete = function (incidencia) {
                             PlantaServices.Incidencias.delete({id: incidencia.id}, function () {
                                 $scope.incidencias.pop(incidencia);
@@ -26,7 +27,7 @@ app.controller("IncidenciasSaveCtrl",
                             });
                         };
                         $scope.Update = function () {
-                            $scope.incidencia.$save(function () {
+                            $scope.incidencia.$update(function () {
                             }, function () {
                             });
                         };
@@ -205,8 +206,8 @@ app.controller("KitsPruebasSaveCtrl",
                         };
                     }
         ]);
-        
-        app.controller("UbicacionesCtrl",
+
+app.controller("UbicacionesCtrl",
         ["$scope", "PlantaServices", "$routeParams"
                     , function ($scope, PlantaServices) {
                         $scope.ubicaciones = PlantaServices.Ubicaciones.query();

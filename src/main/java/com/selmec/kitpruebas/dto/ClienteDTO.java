@@ -18,6 +18,8 @@ public class ClienteDTO implements java.io.Serializable {
     public int id;
 
     public String razonSocial;
+    public String noCliente;
+    public String rfc;
 
     public ClienteDTO() {
     }

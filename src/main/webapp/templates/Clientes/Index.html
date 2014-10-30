@@ -3,13 +3,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Razon Social</th>                
+
+                <th>No Cliente</th>
+                <th>Razon Social</th>                                
+                <th>RFC</th>
                 <th>Acciones</th>
+
             </tr>                                
         </thead>
         <tbody>
-            <tr ng-repeat="row in motores">
-                <td><a href="#/Clientes/Edit/{{row.id}}">{{row.razonSocial}}</a></td>                
+            <tr ng-repeat="cliente in clientes">
+                <td><a href="#/Clientes/Edit/{{cliente.id}}">{{cliente.noCliente}}</a></td>                
+                <td>{{cliente.razonSocial}}</td>
+                <td>{{cliente.rfc}}</td>
                 <td>
                     <button class="btn btn-danger">Borrar</button>
                 </td>                          

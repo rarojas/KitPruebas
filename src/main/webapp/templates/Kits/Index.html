@@ -5,6 +5,7 @@
             <tr>
                 <th>No</th> 
                 <th>Equipo</th> 
+                <th>Descripción</th> 
                 <th>Acciones</th>
             </tr>                                
         </thead>
@@ -12,6 +13,7 @@
             <tr ng-repeat="row in kits">
                 <td><a href="#/KitsPruebas/Edit/{{row.id}}">{{row.noCarril}}</a></td>                
                 <td>{{row.equipo}}</td>
+                <td>{{row.descripcion}}</td>
                 <td>
                     <button class="btn btn-danger">Borrar</button>
                 </td>                          

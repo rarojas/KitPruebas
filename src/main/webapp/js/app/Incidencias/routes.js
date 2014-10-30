@@ -10,7 +10,7 @@ var Routes = ['$routeProvider',
                     controller: 'IncidenciasSaveCtrl'
                 }).
                 when('/Incidencias/Create', {
-                    templateUrl: '/KitPruebas/templates/Incidencias/Edit.html',
+                    templateUrl: '/KitPruebas/templates/Incidencias/Create.html',
                     controller: 'IncidenciasSaveCtrl'
                 }).
                 otherwise({

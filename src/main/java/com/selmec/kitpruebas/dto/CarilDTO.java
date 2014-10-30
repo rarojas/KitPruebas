@@ -28,6 +28,7 @@ public class CarilDTO implements java.io.Serializable {
     public int id;
     public int noCarril;
     public String equipo;
+    public String descripcion;
 
     public CarilDTO() {
     }
